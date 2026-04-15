@@ -80,7 +80,27 @@
         </a>
       </div>
 
-      <button class="header__calc-btn header__calc-btn--desktop btn-reset" type="button">Расчитать</button>
+      <div class="header__lang">
+        <button
+          class="header__lang-toggle btn-reset"
+          type="button"
+          data-lang-toggle
+          data-lang-value="ru"
+          id="header-lang-btn"
+          aria-label="Сменить язык"
+        >
+          <img
+            class="header__lang-flag"
+            src="img/ru_flag.png"
+            alt=""
+            aria-hidden="true"
+            data-lang-flag
+          >
+          <span class="header__lang-current" data-header-lang-current>RU</span>
+        </button>
+      </div>
+
+      <button class="header__calc-btn header__calc-btn--desktop btn-reset" type="button" data-graph-path="calc-order">Рассчитать</button>
 
       <button
         class="header__burger burger btn-reset"
@@ -101,7 +121,17 @@
     <div class="header__inner">
       <nav class="header__nav" aria-label="Услуги">
         <ul class="header__nav-list list-reset">
-          <li><a href="#">Перевод паспорта</a></li>
+          <li class="header__nav-item header__nav-item--with-sub">
+            <button
+              class="header__nav-link header__nav-link--toggle btn-reset"
+              type="button"
+              data-header-submenu-btn
+              aria-expanded="false"
+              aria-controls="header-passport-submenu"
+            >
+              Перевод паспорта
+            </button>
+          </li>
           <li><a href="#">Перевод документов</a></li>
           <li><a href="#">Перевод документов</a></li>
           <li><a href="#">Перевод документов</a></li>
@@ -109,10 +139,73 @@
         </ul>
       </nav>
 
-      <button class="header__show-all btn-reset" type="button">
-        <img src="img/figma-04e4ba6d-5c3d-42fb-8a98-b2e036d76385.svg" alt="" aria-hidden="true">
-        <span>Показать все</span>
+      <button
+        class="header__show-all btn-reset"
+        type="button"
+        data-header-show-all
+        aria-expanded="false"
+        aria-controls="header-passport-submenu"
+        aria-label="Показать все"
+      >
+        <span class="header__show-all-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+        <span class="header__show-all-text">Показать все</span>
       </button>
+    </div>
+
+    <div class="header__mega-overlay" data-header-submenu-overlay hidden></div>
+
+    <div class="header__mega" id="header-passport-submenu" hidden>
+      <div class="header__inner header__mega-inner">
+        <div class="header__mega-grid">
+          <section class="header__mega-column" aria-label="Категория услуг 1">
+            <button class="header__mega-title btn-reset" type="button">
+              Заголовок
+            </button>
+            <ul class="header__mega-list list-reset">
+              <li><a href="#">Перевод паспорта</a></li>
+              <li><a href="#">Перевод паспорта</a></li>
+              <li><a href="#">Перевод паспорта</a></li>
+            </ul>
+          </section>
+
+          <section class="header__mega-column" aria-label="Категория услуг 2">
+            <button class="header__mega-title btn-reset" type="button">
+              Заголовок
+            </button>
+            <ul class="header__mega-list list-reset">
+              <li><a href="#">Перевод паспорта</a></li>
+              <li><a href="#">Перевод паспорта</a></li>
+              <li><a href="#">Перевод паспорта</a></li>
+            </ul>
+          </section>
+
+          <section class="header__mega-column" aria-label="Категория услуг 3">
+            <button class="header__mega-title btn-reset" type="button">
+              Заголовок
+            </button>
+            <ul class="header__mega-list list-reset">
+              <li><a href="#">Перевод паспорта</a></li>
+              <li><a href="#">Перевод паспорта</a></li>
+              <li><a class="is-active" href="#">Перевод паспорта</a></li>
+            </ul>
+          </section>
+
+          <section class="header__mega-column" aria-label="Категория услуг 4">
+            <button class="header__mega-title btn-reset" type="button">
+              Заголовок
+            </button>
+            <ul class="header__mega-list list-reset">
+              <li><a href="#">Перевод паспорта</a></li>
+              <li><a href="#">Перевод паспорта</a></li>
+              <li><a href="#">Перевод паспорта</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -184,6 +277,26 @@
           </div>
         </div>
 
+        <div class="header__lang header__lang--mobile">
+          <button
+            class="header__lang-toggle header__lang-toggle--mobile btn-reset"
+            type="button"
+            data-lang-toggle
+            data-lang-value="ru"
+            id="header-lang-btn-mobile"
+            aria-label="Сменить язык"
+          >
+            <img
+              class="header__lang-flag"
+              src="img/ru_flag.png"
+              alt=""
+              aria-hidden="true"
+              data-lang-flag
+            >
+            <span class="header__lang-current" data-header-lang-current>RU</span>
+          </button>
+        </div>
+
         <a class="header__contact header__contact--mobile header__contact--tel" href="tel:+79936146162" data-header-phone>
           <img src="img/figma-1472eead-5b2c-4c1e-9383-2acb851f32e2.svg" alt="" aria-hidden="true">
           <span class="header__contact-text">+7 993 614-61-62</span>
@@ -203,7 +316,7 @@
         </div>
       </div>
 
-      <button class="header__calc-btn header__calc-btn--mobile btn-reset" type="button" data-menu-item>Расчитать</button>
+      <button class="header__calc-btn header__calc-btn--mobile btn-reset" type="button" data-menu-item data-graph-path="calc-order">Рассчитать</button>
     </div>
   </div>
   <div class="header__overlay" data-menu-overlay></div>
@@ -339,7 +452,7 @@
               </label>
 
               <label class="hero__upload">
-                <input class="visually-hidden" type="file" name="ocr-file">
+                <input class="visually-hidden" type="file" name="order-file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
                 <span class="hero__upload-row">
                   <span class="hero__upload-icon" aria-hidden="true">
                     <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -348,17 +461,21 @@
                       <circle cx="10" cy="9" r="1.5" fill="#ffba00"/>
                     </svg>
                   </span>
-                  <span class="hero__upload-title">Загрузить картинку (OCR)</span>
+                  <span class="hero__upload-title">Загрузить файл (PDF, Word, JPEG)</span>
                 </span>
-                <span class="hero__upload-text">Система сама распознает текст и подсчитает знаки</span>
+                <span class="hero__upload-text">Прикрепите документ для точного расчета стоимости</span>
               </label>
 
-              <button class="hero__button hero__button--primary btn-reset" type="button" data-graph-path="calc-order">
+              <button class="hero__button hero__button--primary btn-reset" type="button" data-graph-path="calc-final">
                 Рассчитать предварительную стоимость
               </button>
               <p class="hero__note">
                 Это займет пару секунд. Точную сумму назовем после ознакомления с документом ИЛИ
               </p>
+              <label class="hero__policy">
+                <input class="hero__policy-checkbox" type="checkbox" name="hero-policy" value="1" checked required>
+                <span>Нажимая на кнопку, я соглашаюсь с <a class="hero__policy-link" href="#">политикой обработки персональных данных</a></span>
+              </label>
 
               <button class="hero__button hero__button--secondary btn-reset" type="button" data-graph-path="calc-order">
                 Сразу заказать перевод
@@ -394,7 +511,7 @@
               <img class="hero-benefits__icon" src="img/benefit-embassy.svg" alt="" aria-hidden="true">
               <h3 class="hero-benefits__title">Переводы для посольств</h3>
               <p class="hero-benefits__text">Строго учитываем требования консульств и миграционных служб.</p>
-              <a class="hero-benefits__link hero-benefits__link--full" href="#">Подробнее <img src="img/arrow-right.png" alt="" aria-hidden="true"></a>
+              <a class="hero-benefits__link" href="#">Подробнее <img src="img/arrow-right.png" alt="" aria-hidden="true"></a>
             </li>
           </ul>
         </div>
@@ -628,7 +745,7 @@
               заверение — процедура, при которой нотариус свидетельствует подлинность подписи
               переводчика. Мы берем на себя весь процесс: от перевода до похода к нотариусу.
             </p>
-            <a class="most-translated__btn btn-reset" href="#">
+            <a class="most-translated__btn btn-reset" href="#" data-graph-path="calc-order">
               Оставить заявку на перевод
               <img class="most-translated__btn-icon" src="img/arrow-right.png" alt="" aria-hidden="true">
             </a>
@@ -796,7 +913,7 @@
             <p class="cta-orange__text">
               Для нас нет «редких» или «сложных» языков — подберем специалиста под любую задачу
             </p>
-            <a class="cta-orange__btn btn-reset" href="#">
+            <a class="cta-orange__btn btn-reset" href="#" data-graph-path="calc-order">
               Оставить заявку на перевод
               <img src="img/arrow-right.png" alt="" aria-hidden="true">
             </a>
@@ -981,14 +1098,130 @@
         data-graph-target="calc-order"
       >
         <button class="btn-reset graph-modal__close js-modal-close calc-modal__close" type="button" aria-label="Закрыть модальное окно">
-          <span aria-hidden="true">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
         </button>
         <div class="graph-modal__content calc-modal__content">
-          <p class="calc-modal__title" id="calc-modal-title">
+          <div class="hero__calculator">
+            <h2 class="hero__calculator-title" id="calc-modal-title">Оценка стоимости перевода</h2>
+            <form class="hero__form calc-modal__form" action="#" method="post">
+              <div class="hero__field hero__field--full hero__field--select" data-hero-select>
+                <span class="hero__label" id="modal-doc-label">Что требуется перевести</span>
+                <div class="hero__select">
+                  <button class="hero__control hero__select-trigger btn-reset" type="button" id="modal-doc-trigger"
+                    aria-labelledby="modal-doc-label" aria-expanded="false" aria-haspopup="listbox"
+                    aria-controls="modal-doc-list">
+                    <span class="hero__select-value">Выберите тип документа</span>
+                  </button>
+                  <ul class="hero__select-panel list-reset" id="modal-doc-list" role="listbox" aria-labelledby="modal-doc-label" hidden>
+                    <li class="hero__select-option" role="option" data-value="passport" tabindex="-1">Паспорт</li>
+                    <li class="hero__select-option" role="option" data-value="diploma" tabindex="-1">Диплом</li>
+                    <li class="hero__select-option" role="option" data-value="certificate" tabindex="-1">Свидетельство</li>
+                    <li class="hero__select-option" role="option" data-value="contract" tabindex="-1">Юридический договор</li>
+                    <li class="hero__select-option" role="option" data-value="other" tabindex="-1">Другое</li>
+                  </ul>
+                  <input type="hidden" name="document-type" value="">
+                </div>
+              </div>
+
+              <div class="hero__form-row hero__form-row--langs">
+                <div class="hero__field hero__field--lang hero__field--select" data-hero-select>
+                  <span class="hero__label" id="modal-from-lang-label">С какого языка</span>
+                  <div class="hero__select">
+                    <button class="hero__control hero__select-trigger btn-reset" type="button" id="modal-from-lang-trigger"
+                      aria-labelledby="modal-from-lang-label" aria-expanded="false" aria-haspopup="listbox"
+                      aria-controls="modal-from-lang-list">
+                      <span class="hero__select-value">Русский</span>
+                    </button>
+                    <ul class="hero__select-panel list-reset" id="modal-from-lang-list" role="listbox" aria-labelledby="modal-from-lang-label" hidden>
+                      <li class="hero__select-option" role="option" data-value="ru" tabindex="-1">Русский</li>
+                      <li class="hero__select-option" role="option" data-value="en" tabindex="-1">Английский</li>
+                      <li class="hero__select-option" role="option" data-value="other" tabindex="-1">Другое</li>
+                    </ul>
+                    <input type="hidden" name="from-language" value="ru">
+                  </div>
+                </div>
+
+                <div class="hero__field hero__field--lang hero__field--select" data-hero-select>
+                  <span class="hero__label" id="modal-to-lang-label">На какой язык</span>
+                  <div class="hero__select">
+                    <button class="hero__control hero__select-trigger btn-reset" type="button" id="modal-to-lang-trigger"
+                      aria-labelledby="modal-to-lang-label" aria-expanded="false" aria-haspopup="listbox"
+                      aria-controls="modal-to-lang-list">
+                      <span class="hero__select-value">Русский</span>
+                    </button>
+                    <ul class="hero__select-panel list-reset" id="modal-to-lang-list" role="listbox" aria-labelledby="modal-to-lang-label" hidden>
+                      <li class="hero__select-option" role="option" data-value="ru" tabindex="-1">Русский</li>
+                      <li class="hero__select-option" role="option" data-value="en" tabindex="-1">Английский</li>
+                      <li class="hero__select-option" role="option" data-value="other" tabindex="-1">Другое</li>
+                    </ul>
+                    <input type="hidden" name="to-language" value="ru">
+                  </div>
+                </div>
+              </div>
+
+              <label class="hero__field">
+                <span class="hero__label">Количество страниц</span>
+                <input class="hero__control" type="text" name="pages" placeholder="Например: 1">
+              </label>
+
+              <label class="hero__field">
+                <span class="hero__field-head">
+                  <span class="hero__label">Знаков с пробелами</span>
+                  <span class="hero__hint">1 стр = 1800 знаков</span>
+                </span>
+                <input class="hero__control" type="text" name="characters" placeholder="Например: 1800">
+              </label>
+
+              <label class="hero__upload">
+                <input class="visually-hidden" type="file" name="order-file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                <span class="hero__upload-row">
+                  <span class="hero__upload-icon" aria-hidden="true">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 22h20a2 2 0 002-2V10a2 2 0 00-2-2h-3.2L17.4 5.3a2 2 0 00-1.6-.8H9.2a2 2 0 00-1.6.8L8.2 8H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="#ffba00" stroke-width="1.25" stroke-linejoin="round"/>
+                      <circle cx="15" cy="14" r="4" stroke="#ffba00" stroke-width="1.25"/>
+                      <circle cx="10" cy="9" r="1.5" fill="#ffba00"/>
+                    </svg>
+                  </span>
+                  <span class="hero__upload-title">Загрузить файл (PDF, Word, JPEG)</span>
+                </span>
+                <span class="hero__upload-text">Прикрепите документ для точного расчета стоимости</span>
+              </label>
+
+              <button class="hero__button hero__button--primary btn-reset" type="button" data-graph-path="calc-final">
+                Рассчитать предварительную стоимость
+              </button>
+              <p class="hero__note">
+                Это займет пару секунд. Точную сумму назовем после ознакомления с документом ИЛИ
+              </p>
+              <label class="hero__policy">
+                <input class="hero__policy-checkbox" type="checkbox" name="hero-policy" value="1" checked required>
+                <span>Нажимая на кнопку, я соглашаюсь с <a class="hero__policy-link" href="#">политикой обработки персональных данных</a></span>
+              </label>
+
+              <button class="hero__button hero__button--secondary btn-reset" type="submit">
+                Сразу заказать перевод
+                <span class="hero__button-arrow" aria-hidden="true">→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div
+        class="graph-modal__container graph-modal__container--calc fade"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="calc-final-title"
+        data-graph-target="calc-final"
+      >
+        <button class="btn-reset graph-modal__close js-modal-close calc-modal__close" type="button" aria-label="Закрыть модальное окно">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="graph-modal__content calc-modal__content">
+          <p class="calc-modal__title" id="calc-final-title">
             Стоимость перевода составит 2 000 руб. (или) 1 655 — 2 437 руб.
           </p>
           <form class="calc-modal__form" action="#" method="post">
@@ -1015,8 +1248,8 @@
                     <span class="calc-modal__file-placeholder">Выберите файл</span>
                     <span class="calc-modal__file-icon" aria-hidden="true">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 4v10M6 8l4-4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M4 17h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M10 4v10M6 8l4-4 4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M4 17h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"></path>
                       </svg>
                     </span>
                   </span>
