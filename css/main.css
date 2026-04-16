@@ -1023,7 +1023,7 @@ a {
     padding: 10px 15px;
   }
   .header__logo img {
-    width: min(220px, 58vw);
+    width: min(220px, 50vw);
     height: auto;
     max-height: 40px;
     -o-object-fit: contain;
